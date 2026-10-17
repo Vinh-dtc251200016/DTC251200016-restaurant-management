@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý nhà hàng</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🍜 Hệ thống Quản lý Nhà hàng</h1>
+        <p>DTC251200016 - Nguyễn Công Vĩnh</p>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab-btn active" data-tab="dishes">🍽️ Món ăn</button>
+        <button class="tab-btn" data-tab="tables">🪑 Bàn ăn</button>
+        <button class="tab-btn" data-tab="orders">🧾 Đơn hàng</button>
+    </nav>
+
+    <main>
+        <!-- TAB MÓN ĂN -->
+        <section id="dishes" class="tab-content active">
+            <h2>Danh sách món ăn</h2>
+            <table id="dishes-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên món</th>
+                        <th>Giá</th>
+                        <th>Loại</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <h3>Thêm món mới</h3>
+            <form id="dish-form">
+                <input type="text" id="dish-name" placeholder="Tên món" required>
+                <input type="text" id="dish-description" placeholder="Mô tả">
+                <input type="number" id="dish-price" placeholder="Giá" required min="0">
+                <input type="text" id="dish-category" placeholder="Loại (Món nước, Khai vị...)">
+                <button type="submit">Thêm món</button>
+            </form>
+        </section>
+
+        <!-- TAB BÀN ĂN -->
+        <section id="tables" class="tab-content">
+            <h2>Danh sách bàn ăn</h2>
+            <table id="tables-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Số bàn</th>
+                        <th>Sức chứa</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <h3>Thêm bàn mới</h3>
+            <form id="table-form">
+                <input type="text" id="table-number" placeholder="Số bàn (B06)" required>
+                <input type="number" id="table-capacity" placeholder="Sức chứa" value="4" min="1">
+                <button type="submit">Thêm bàn</button>
+            </form>
+        </section>
+
+        <!-- TAB ĐƠN HÀNG -->
+        <section id="orders" class="tab-content">
+            <h2>Danh sách đơn hàng</h2>
+            <table id="orders-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Bàn</th>
+                        <th>Món</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Tổng</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <h3>Tạo đơn hàng mới</h3>
+            <form id="order-form">
+                <select id="order-table" required>
+                    <option value="">-- Chọn bàn --</option>
+                </select>
+                <select id="order-dish" required>
+                    <option value="">-- Chọn món --</option>
+                </select>
+                <input type="number" id="order-quantity" placeholder="Số lượng" value="1" min="1" required>
+                <button type="submit">Tạo đơn</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - DTC251200016 | Bài tập lớn</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
